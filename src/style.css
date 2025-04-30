@@ -98,4 +98,31 @@ html, body {
     transition: opacity 0.5s ease;
   }
   
+  /* FAQ Styling */
+#faq .accordion-button {
+    color: #4E3A30;
+    font-weight: 600;
+    background-color: #f8f8f8;
+    padding: 1rem 1.25rem;
+  }
   
+  #faq .accordion-button:not(.collapsed) {
+    color: #C48E6A;
+    background-color: #f8f8f8;
+    box-shadow: none;
+  }
+  
+  #faq .accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(196, 142, 106, 0.5);
+  }
+  
+  #faq .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23C48E6A'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  }
+  
+  #faq .accordion-body {
+    background-color: #fff;
+    padding: 1.25rem;
+    color: #4E3A30;
+  }
