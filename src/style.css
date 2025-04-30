@@ -126,3 +126,23 @@ html, body {
     padding: 1.25rem;
     color: #4E3A30;
   }
+
+  /* İletişim Formu Stilleri */
+#contact .form-control {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+  }
+  
+  #contact .form-control:focus {
+    border-color: #C48E6A;
+    box-shadow: 0 0 0 0.2rem rgba(196, 142, 106, 0.25);
+  }
+  
+  #contact .btn-primary:hover {
+    background-color: #A26E4B !important;
+  }
+  
+  #contact a:hover {
+    color: #A26E4B !important;
+  }
