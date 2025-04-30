@@ -1,4 +1,3 @@
-/* Sticky footer setup */
 html, body {
     height: 100%;
     margin: 0;
@@ -7,6 +6,12 @@ html, body {
     background-color: #ffffff;
   }
   
+  header {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
   .rezinn-brand-text {
     color: #C48E6A;
     font-weight: 600;
@@ -36,4 +41,14 @@ html, body {
     background-color: #C48E6A;
     color: #FFFFFF;
   }
+  
+  #changing-text::selection {
+    background: white;
+    color: black;
+  }
+  
+  #changing-line {
+    transition: opacity 0.5s ease;
+  }
+  
   
