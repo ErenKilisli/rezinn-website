@@ -9,9 +9,11 @@ html, body {
   header {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* üstten başlat */
+    justify-content: center;
+    padding-top: -5vh; /* yukarıdan %10 boşluk bırak */
   }
-
+  
   .rezinn-brand-text {
     color: #C48E6A;
     font-weight: 600;

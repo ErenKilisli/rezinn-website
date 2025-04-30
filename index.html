@@ -23,6 +23,10 @@
     .store-button:hover svg {
       opacity: 0.6;
     }
+    header {
+      display: flex;
+      align-items: center;
+    }
   </style>
 </head>
 <body>
@@ -40,8 +44,8 @@
 
     <!-- Main content -->
     <main class="flex-grow-1">
-      <header class="text-center py-5" style="background-color: #C48E6A; min-height: 100vh;">
-        <div class="container d-flex flex-column align-items-center justify-content-center">
+        <header class="text-center" style="background-color: #C48E6A; min-height: 100vh;">
+            <div class="container d-flex flex-column align-items-center justify-content-center h-100">
 
           <!-- Rezinn logosu -->
           <img src="assets/RezinnLogo.png" alt="Rezinn Logo" class="img-fluid mb-3" style="max-width: 280px;" />
@@ -63,11 +67,10 @@
             <p>
               Hemen indir, şehrin en gözde mekânlarında kolayca ve ayrıcalıklarla rezervasyonunu yap.
             </p>
-            <p class="mt-4"><strong>Rezinn</strong><br><span style="font-style: italic;">Senin yerin ayrı</span></p>
           </div>
 
           <!-- Butonlar -->
-          <div class="d-flex flex-column flex-sm-row gap-4 mt-4 justify-content-center align-items-center">
+          <div class="d-flex flex-row flex-wrap justify-content-center gap-4 mt-4 store-buttons">
             <!-- Google Play -->
             <a href="https://play.google.com/store/apps/details?id=com.atonomik.rezinn&utm_source=emea_Med" target="_blank" class="text-decoration-none text-center store-button">
               <div class="d-flex flex-column align-items-center">
@@ -105,7 +108,7 @@
             <p>Sıradışı ve popüler mekanları kolayca bul.</p>
           </div>
           <div class="col-md-4">
-            <h5>🗕 Rezerve Et</h5>
+            <h5>🔕 Rezerve Et</h5>
             <p>Telefonla uğraşmadan yerini hemen ayırt.</p>
           </div>
           <div class="col-md-4">
