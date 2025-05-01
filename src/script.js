@@ -68,3 +68,19 @@ window.addEventListener('scroll', function() {
     logo.src = 'assets/RezinnIconDark.png';
   }
 });
+
+// touchend veya click sonrası odakta kalan buton/a elemanını kaybet
+['touchend', 'click'].forEach(evt => {
+  document.addEventListener(evt, () => {
+    const active = document.activeElement;
+    if (
+      active &&
+      (active.tagName === 'BUTTON' ||
+       active.tagName === 'A' ||
+       active.classList.contains('store-btn') ||
+       active.classList.contains('contact-btn'))
+    ) {
+      active.blur();
+    }
+  });
+});
