@@ -65,3 +65,23 @@ function changeLine() {
     index = (index + 1) % lines.length;
   }, 500);
 }
+
+window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.navbar');
+  const logo = navbar.querySelector('img');
+  const heroBottom = document.getElementById('hero-section').getBoundingClientRect().bottom;
+
+  if (heroBottom <= 0) {
+    navbar.classList.add('scrolled');
+    logo.src = 'assets/RezinnIcon.png';
+  } else {
+    navbar.classList.remove('scrolled');
+    logo.src = 'assets/RezinnIconDark.png';
+  }
+});
+
+
+
+
+
+

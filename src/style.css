@@ -1,148 +1,224 @@
 html, body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    color: #4E3A30;
-    background-color: #ffffff;
-  }
-  
-  #hero-section {
-    position: relative;
-    overflow: hidden;
-    padding-top: 0; /* Üst boşluğu azaltır */
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #4E3A30;
+  background-color: #ffffff;
+}
 
-  }
-  
+#hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+#hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/RezinnIcon.png');
+  background-repeat: no-repeat;
+  background-position: 90% center;
+  background-size: auto 175%;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+@media (min-width: 1400px) {
   #hero-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../assets/RezinnIcon.png');
-    background-repeat: no-repeat;
-    background-position: 90% center; /* Sağa doğru konumlandır, 90% değeri her zaman sağda kalmasını sağlar */
-    background-size: auto 175%;
-    opacity: 0.1;
-    z-index: 1;
+    background-position: 80% center;
+    background-size: auto 200%;
   }
-  
-  /* Ekstra büyük ekranlar için ek ayarlar */
-  @media (min-width: 1400px) {
-    #hero-section::before {
-      background-position: 80% center; /* Daha büyük ekranlarda biraz daha sola alır */
-      background-size: auto 200%; /* Daha büyük ekranlarda daha büyük görünür */
-    }
-  }
-  
-  /* Responsive ayarlar - mobil */
-  @media (max-width: 768px) {
-    #hero-section::before {
-      background-position: 50% center; /* Mobilde ortalanır */
-    }
-  }
-  
-  #hero-section .container {
-    position: relative;
-    z-index: 2; /* İçeriğin arka plan deseninin üzerinde görünmesini sağlar */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 1rem;
-  }
-  
-  /* Logo için özel stil */
-  #hero-section img.img-fluid {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-  }
-  
-  .rezinn-brand-text {
-    color: #C48E6A;
-    font-weight: 600;
-    font-size: 1.25rem;
-    text-decoration: none;
-  }
-  
-  .section-title {
-    color: #C48E6A;
-    font-weight: 600;
-  }
-  
-  .btn-light {
-    background-color: #ffffff;
-    color: #C48E6A;
-    font-weight: 600;
-    border: none;
-    transition: 0.3s ease-in-out;
-  }
-  
-  .btn-light:hover {
-    background-color: #f5f5f5;
-    color: #A26E4B;
-  }
-  
-  .rezinn-footer {
-    background-color: #C48E6A;
-    color: #FFFFFF;
-  }
-  
-  #changing-text::selection {
-    background: white;
-    color: black;
-  }
-  
-  #changing-line {
-    transition: opacity 0.5s ease;
-  }
-  
-  /* FAQ Styling */
-#faq .accordion-button {
-    color: #4E3A30;
-    font-weight: 600;
-    background-color: #f8f8f8;
-    padding: 1rem 1.25rem;
-  }
-  
-  #faq .accordion-button:not(.collapsed) {
-    color: #C48E6A;
-    background-color: #f8f8f8;
-    box-shadow: none;
-  }
-  
-  #faq .accordion-button:focus {
-    box-shadow: none;
-    border-color: rgba(196, 142, 106, 0.5);
-  }
-  
-  #faq .accordion-button::after {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23C48E6A'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-  }
-  
-  #faq .accordion-body {
-    background-color: #fff;
-    padding: 1.25rem;
-    color: #4E3A30;
-  }
+}
 
-  /* İletişim Formu Stilleri */
+@media (max-width: 768px) {
+  #hero-section::before {
+    background-position: 50% center;
+  }
+}
+
+#hero-section .container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+#hero-section img.img-fluid {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.rezinn-brand-text {
+  display: none; /* Rezinn yazısını navbar’dan kaldırdık */
+}
+
+.section-title {
+  color: #C48E6A;
+  font-weight: 600;
+}
+
+.btn-light {
+  background-color: #ffffff;
+  color: #C48E6A;
+  font-weight: 600;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-light:hover {
+  background-color: #f5f5f5;
+  color: #A26E4B;
+}
+
+.rezinn-footer {
+  background-color: #C48E6A;
+  color: #FFFFFF;
+}
+
+#changing-line {
+  transition: opacity 0.5s ease;
+}
+
+#changing-line::selection {
+  background: white;
+  color: black;
+}
+
+/* Navbar */
+.navbar {
+  background-color: white; /* Başlangıçta beyaz arka plan */
+  transition: background-color 0.4s ease, padding 0.4s ease;
+  padding: 1rem 1rem;
+}
+
+.navbar img {
+  transition: transform 0.4s ease;
+  height: 36px; /* Logo başlangıç yüksekliği */
+}
+
+/* Scroll sonrası */
+.navbar.scrolled {
+  background-color: #C48E6A !important;
+  padding: 0.5rem 1rem;
+}
+
+.navbar.scrolled img {
+  transform: scale(0.8); /* Logo küçülür */
+}
+
+/* Store-button ve Contact-btn renkleri */
+.navbar .store-button svg,
+.navbar .contact-btn {
+  color: #C48E6A; /* Başlangıçta bakır rengi */
+  fill: #C48E6A;
+}
+
+.navbar.scrolled .store-button svg,
+.navbar.scrolled .contact-btn {
+  color: #ffffff; /* Scroll sonrası beyaz */
+  fill: #ffffff;
+}
+
+/* “Hemen indir” altındaki çizgiyi tamamen kaldır */
+.navbar .store-button,
+.navbar .store-button * {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* Store-button yazı stili */
+.navbar .store-button span {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Scroll sonrası store-button yazısını göster */
+.navbar.scrolled .store-button span {
+  display: inline !important;
+  color: white;
+}
+
+/* Container ve nav-actions ortala (scroll sonrası) */
+.navbar.scrolled .container {
+  justify-content: center !important;
+}
+
+.navbar.scrolled .nav-actions {
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+/* contact-btn’u scroll sonrası sağda tut */
+.navbar.scrolled .contact-btn {
+  position: absolute;
+  right: 1rem;
+}
+
+/* Eğer `.navbar-store` kullanıyorsanız */
+.navbar-store {
+  position: absolute;
+  right: 2rem;
+  transition: all 0.5s ease;
+}
+
+.navbar.scrolled .navbar-store {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* FAQ Styling */
+#faq .accordion-button {
+  color: #4E3A30;
+  font-weight: 600;
+  background-color: #f8f8f8;
+  padding: 1rem 1.25rem;
+}
+
+#faq .accordion-button:not(.collapsed) {
+  color: #C48E6A;
+  background-color: #f8f8f8;
+  box-shadow: none;
+}
+
+#faq .accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(196, 142, 106, 0.5);
+}
+
+#faq .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23C48E6A'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+#faq .accordion-body {
+  background-color: #fff;
+  padding: 1.25rem;
+  color: #4E3A30;
+}
+
+/* İletişim Formu Stilleri */
 #contact .form-control {
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    padding: 10px 15px;
-  }
-  
-  #contact .form-control:focus {
-    border-color: #C48E6A;
-    box-shadow: 0 0 0 0.2rem rgba(196, 142, 106, 0.25);
-  }
-  
-  #contact .btn-primary:hover {
-    background-color: #A26E4B !important;
-  }
-  
-  #contact a:hover {
-    color: #A26E4B !important;
-  }
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+}
+
+#contact .form-control:focus {
+  border-color: #C48E6A;
+  box-shadow: 0 0 0 0.2rem rgba(196, 142, 106, 0.25);
+}
+
+#contact .btn-primary:hover {
+  background-color: #A26E4B !important;
+}
+
+#contact a:hover {
+  color: #A26E4B !important;
+}
