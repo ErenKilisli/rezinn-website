@@ -260,10 +260,16 @@ html, body {
   color: #A26E4B !important;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 470px) {
   .navbar.scrolled .contact-btn {
     color: transparent;
     border-color: transparent;
     pointer-events: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar.scrolled .logo {
+    display: none;
   }
 }
