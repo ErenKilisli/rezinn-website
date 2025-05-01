@@ -133,3 +133,4 @@ document.addEventListener('DOMContentLoaded', () => {
   showSlide(0);
   startAuto();
 });
+
