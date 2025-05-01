@@ -293,14 +293,28 @@ html, body {
   max-width: 300px;
 }
 
-/* Opsiyonel: mobilde okları gizle */
-@media (max-width: 767px) {
-  .nav-arrow { display: none; }
+.nav-arrow {
+  display: block !important;   /* her zaman görünür olsun */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+.prev { left: -1.5rem; }
+.next { right: -1.5rem; }
+
+.nav-arrow .size-6 {
+  color: rgba(196,142,106,0.85);
+  transition: color 0.2s ease;
+}
+.nav-arrow:hover .size-6 {
+  color: #C48E6A;
 }
 
-/* ──────────────────────────────────────────
-   2) Masaüstü / Geniş ekran için iki sütun
-────────────────────────────────────────── */
 @media (min-width: 768px) {
   .preview-content {
     flex-direction: row;       /* yan yana */
@@ -310,20 +324,19 @@ html, body {
     padding: 0;                /* yan boşluk kaldır */
   }
   .slider-container {
-    width: auto;               /* kendi içeriğini sığdır */
+    width: auto;
     max-width: none;
-    margin: 0;                 /* otomatik margin kaldır */
+    margin: 0;
     flex: 0 0 auto;
   }
   .raw-slide {
-    max-width: 280px;          /* masaüstü telefon genişliği */
+    max-width: 280px;
   }
   .caption-container {
     text-align: left;
-    margin-left: 2rem;         /* telefondan boşluk */
+    margin-left: 2rem;
     flex: 0 0 auto;
   }
-  /* oklar masaüstünde tekrar göster */
   .nav-arrow { display: block; }
 }
 
