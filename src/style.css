@@ -181,14 +181,35 @@ html, body {
   z-index: 10;     /* Diğer elemanların üstünde kalsın */
 }
 
-@media (max-width: 500px) {
-  .navbar.scrolled .contact-btn {
-    color: transparent;
-    border-color: transparent;
-    pointer-events: none;
-  }
+.contact-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #C48E6A;
+  background-color: transparent;
+  border: 2px solid #C48E6A;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.contact-btn:hover {
+  background-color: #C48E6A;
+  color: #ffffff;
+}
+
+.navbar.scrolled .contact-btn {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.navbar.scrolled .contact-btn:hover {
+  background-color: #ffffff;
+  color: #C48E6A;
+}
 
 /* FAQ Styling */
 #faq .accordion-button {
@@ -237,4 +258,12 @@ html, body {
 
 #contact a:hover {
   color: #A26E4B !important;
+}
+
+@media (max-width: 500px) {
+  .navbar.scrolled .contact-btn {
+    color: transparent;
+    border-color: transparent;
+    pointer-events: none;
+  }
 }
