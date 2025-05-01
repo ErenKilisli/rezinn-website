@@ -84,3 +84,51 @@ window.addEventListener('scroll', function() {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // 1.png … 9.png olacak şekilde
+  const images = Array.from({length: 9}, (_, i) => `assets/${i+1}.png`);
+  const captions = [
+    'Anasayfa’da tüm mekânları görüp inceleyebilir, dilediğin restoranı arayarak bulabilirsin.',
+    'Keşfet’e tıkladığında haritadan yakınındaki mekanların lokasyonlarını görebilirsin.',
+    'Dilersen restoranları türüne, fiyatlarına, yorumlarına göre sıralayıp sana en uygun mekanı keşfedebilirsin.',
+    'Dilediğin restorana tıklayarak mekân hakkında lokasyon, fiyatlar, yorumlar, doluluk oranı gibi ayrıntılı bilgilere ulaşabilirsin.',
+    'İstediğin restorana tıklayıp “Rezervasyon Yap”a tıklayarak tarihi ve saati seçip kolayca rezervasyon oluşturabilirsin.',
+    'Rezervasyonunu başarılı bir şekilde oluşturduktan sonra dilerseniz takviminize de ekleyebilirsiniz.',
+    'Rezervasyonlar bölümünde oluşturduğunuz tüm rezervasyonları görebilirsiniz.',
+    'Mesajlar sekmesinden dilediğiniz restoranla mesajlaşabilirsiniz.',
+    'Restorana mekanla ilgili merak ettiğiniz tüm soruları sorabilir, gönül rahatlığıyla fikir alabilirsiniz.'
+  ];
+
+  let idx = 0;
+  const imgEl = document.getElementById('slider-img');
+  const capEl = document.getElementById('slider-caption');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+  let timer;
+
+  function showSlide(i) {
+    idx = (i + images.length) % images.length;
+    imgEl.style.opacity = 0;
+    setTimeout(() => {
+      imgEl.src = images[idx];
+      capEl.textContent = captions[idx];
+      imgEl.style.opacity = 1;
+    }, 300);
+  }
+
+  function startAuto() {
+    timer = setInterval(() => showSlide(idx+1), 5000);
+  }
+  function resetAuto() {
+    clearInterval(timer);
+    startAuto();
+  }
+
+  prevBtn.addEventListener('click', () => { showSlide(idx-1); resetAuto(); });
+  nextBtn.addEventListener('click', () => { showSlide(idx+1); resetAuto(); });
+
+  // İlk gösterim ve otomatik başlat
+  showSlide(0);
+  startAuto();
+});

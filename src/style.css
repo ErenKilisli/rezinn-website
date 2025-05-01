@@ -260,6 +260,76 @@ html, body {
   color: #A26E4B !important;
 }
 
+#app-preview {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.preview-content {
+  display: flex;
+  flex-direction: column;    /* mobilde üst üste */
+  align-items: center;       /* dikeyde ortala */
+  gap: 1.5rem;               /* elemanlar arası boşluk */
+  padding: 0 1rem;           /* yan boşluk ver */
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;               /* tüm yatay alanı kullan */
+  max-width: 300px;          /* telefon genişliği sınırı */
+  margin: 0 auto;            /* ortala */
+}
+
+.raw-slide {
+  width: 100%;               /* container’a tam otur */
+  height: auto;
+  object-fit: contain;       /* kırpma yapma */
+}
+
+/* Mobilde açıklamayı ortala ve biraz boşluk ver */
+.caption-container {
+  margin-left: 0 !important;
+  text-align: center;
+  max-width: 300px;
+}
+
+/* Opsiyonel: mobilde okları gizle */
+@media (max-width: 767px) {
+  .nav-arrow { display: none; }
+}
+
+/* ──────────────────────────────────────────
+   2) Masaüstü / Geniş ekran için iki sütun
+────────────────────────────────────────── */
+@media (min-width: 768px) {
+  .preview-content {
+    flex-direction: row;       /* yan yana */
+    justify-content: center;   /* container ortala */
+    align-items: center;       /* dikeyde ortala */
+    gap: 2rem;                 /* sütunlar arası genişlik */
+    padding: 0;                /* yan boşluk kaldır */
+  }
+  .slider-container {
+    width: auto;               /* kendi içeriğini sığdır */
+    max-width: none;
+    margin: 0;                 /* otomatik margin kaldır */
+    flex: 0 0 auto;
+  }
+  .raw-slide {
+    max-width: 280px;          /* masaüstü telefon genişliği */
+  }
+  .caption-container {
+    text-align: left;
+    margin-left: 2rem;         /* telefondan boşluk */
+    flex: 0 0 auto;
+  }
+  /* oklar masaüstünde tekrar göster */
+  .nav-arrow { display: block; }
+}
+
+
+
+
 @media (max-width: 470px) {
   .navbar.scrolled .contact-btn {
     color: transparent;
