@@ -109,13 +109,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showSlide(i) {
     idx = (i + images.length) % images.length;
-    imgEl.style.opacity = 0;
+    imgEl.style.opacity = 0;           
     setTimeout(() => {
-      imgEl.src = images[idx];
-      capEl.textContent = captions[idx];
-      imgEl.style.opacity = 1;
-    }, 300);
+      imgEl.src = images[idx];            
+      capEl.textContent = captions[idx];     
+      imgEl.style.opacity = 1; 
+    }, 500);    
   }
+  
 
   function startAuto() {
     timer = setInterval(() => showSlide(idx+1), 5000);
