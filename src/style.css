@@ -275,10 +275,11 @@ html, body {
 
 .slider-container {
   position: relative;
-  width: 100%;               /* tüm yatay alanı kullan */
-  max-width: 300px;          /* telefon genişliği sınırı */
-  margin: 0 auto;            /* ortala */
+  width: auto;        /* full-width yerine auto */
+  max-width: 300px;   /* telefon genişliği */
+  margin: 0 auto;
 }
+
 
 .raw-slide {
   width: 100%;               /* container’a tam otur */
@@ -308,11 +309,21 @@ html, body {
 .next { right: -1.5rem; }
 
 .nav-arrow .size-6 {
-  color: rgba(196,142,106,0.85);
-  transition: color 0.2s ease;
+  color: #C48E6A !important;   /* Rezinn bakır rengi */
+  width: 35px;                 /* eski 32px yerine 40px */
+  height: 35px;                /* eski 32px yerine 40px */
+  transition: color 0.2s ease, transform 0.2s ease;
 }
+
+/* Hover’da biraz büyütme efekti (opsiyonel) */
 .nav-arrow:hover .size-6 {
-  color: #C48E6A;
+  transform: scale(1.2);
+  color: #A26E4B;              /* hover rengi biraz koyu bakır */
+}
+
+/* Butonun tıklama alanını genişlet */
+.nav-arrow {
+  padding: 0.75rem;            /* önceki 0.5rem’den biraz genişlettik */
 }
 
 @media (min-width: 768px) {
