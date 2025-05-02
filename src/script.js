@@ -138,8 +138,9 @@ window.addEventListener('scroll', function() {
   const sections = [
     { id: 'contact', path: '/contact' },
     { id: 'faq', path: '/faq' },
+    { id: 'explore', path: '/explore' },
     { id: 'how', path: '/how' },
-    { id: 'hero-section', path: '/' },
+    { id: 'main', path: '/main' },
   ];
 
   const scrollY = window.scrollY + window.innerHeight / 2;
