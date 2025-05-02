@@ -134,3 +134,30 @@ document.addEventListener('DOMContentLoaded', () => {
   startAuto();
 });
 
+window.addEventListener('scroll', function() {
+  const sections = [
+    { id: 'contact', path: '/contact' },
+    { id: 'faq', path: '/faq' },
+    { id: 'how', path: '/how' },
+    { id: 'hero-section', path: '/' },
+  ];
+
+  const scrollY = window.scrollY + window.innerHeight / 2;
+
+  for (const section of sections) {
+    const el = document.getElementById(section.id);
+    if (el) {
+      const rect = el.getBoundingClientRect();
+      const top = rect.top + window.scrollY;
+      const bottom = top + el.offsetHeight;
+
+      if (scrollY >= top && scrollY < bottom) {
+        const newUrl = section.path === '/' ? window.location.origin : window.location.origin + section.path;
+        if (window.location.href !== newUrl) {
+          history.replaceState(null, '', newUrl);
+        }
+        break;
+      }
+    }
+  }
+});
