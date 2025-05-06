@@ -86,7 +86,7 @@ window.addEventListener('scroll', function() {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1.png … 9.png olacak şekilde
+  // 1.png … 9.png
   const images = Array.from({length: 9}, (_, i) => `assets/${i+1}.png`);
   const captions = [
     'Anasayfa’da tüm mekânları görüp inceleyebilir, dilediğin restoranı arayarak bulabilirsin.',
@@ -129,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
   prevBtn.addEventListener('click', () => { showSlide(idx-1); resetAuto(); });
   nextBtn.addEventListener('click', () => { showSlide(idx+1); resetAuto(); });
 
-  // İlk gösterim ve otomatik başlat
   showSlide(0);
   startAuto();
 });
