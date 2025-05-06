@@ -57,7 +57,7 @@ html, body {
 .hero-caption {
   display: inline-block;
   padding: 1.5rem 2rem;
-  border: 1px solid rgba(255,255,255,0.8);
+  border: 0.5px solid rgba(255,255,255,0.8);
   border-radius: 8px;
   max-width: 90%;
   text-align: center;
