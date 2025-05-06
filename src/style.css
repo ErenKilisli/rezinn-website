@@ -54,6 +54,45 @@ html, body {
   margin-bottom: 1.5rem;
 }
 
+/* HERO CAPTION KUTUSU */
+.hero-caption {
+  display: inline-block;
+  padding: 1.5rem 2rem;
+  border: 1px solid rgba(255,255,255,0.8);
+  border-radius: 8px;
+  max-width: 90%;
+  text-align: center;
+}
+
+/* Başlık boyutları */
+.hero-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Alt metin */
+.hero-subtitle {
+  font-size: 1rem;
+  margin: 0.75rem 0 0;
+  line-height: 1.4;
+}
+
+/* Mobil için biraz küçültme */
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+  .hero-caption {
+    padding: 1rem;
+  }
+}
+
+
 .rezinn-brand-text {
   display: none; /* Rezinn yazısını navbar’dan kaldırdık */
 }
